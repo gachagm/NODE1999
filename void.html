@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VOID_CORE // FINAL NODE</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      color: #050505; /* fast unsichtbar */
+      font-family: "IBM Plex Mono", monospace;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      line-height: 1.6;
+      padding: 2rem;
+      border: 1px solid #050505;
+      position: relative;
+    }
+
+    .title {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .core-text {
+      font-size: 0.9rem;
+      opacity: 0.15;
+      transition: opacity 0.6s ease, color 0.6s ease, text-shadow 0.6s ease;
+      filter: blur(1px);
+    }
+
+    /* Sichtbar machen: Hover auf Container */
+    .container:hover .core-text,
+    .container:active .core-text {
+      opacity: 1;
+      color: #f5f5f5;
+      filter: blur(0);
+      text-shadow:
+        0 0 6px #0ff,
+        0 0 18px #0ff,
+        0 0 32px #f0f;
+    }
+
+    /* Glitch-Effekt */
+    .glitch {
+      position: relative;
+      display: inline-block;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      overflow: hidden;
+      clip-path: inset(0 0 50% 0);
+      opacity: 0;
+      mix-blend-mode: screen;
+    }
+
+    .glitch::before {
+      color: #0ff;
+      animation: glitchTop 2.4s infinite linear alternate-reverse;
+    }
+
+    .glitch::after {
+      color: #f0f;
+      clip-path: inset(50% 0 0 0);
+      animation: glitchBottom 2.4s infinite linear alternate-reverse;
+    }
+
+    .container:hover .glitch::before,
+    .container:hover .glitch::after {
+      opacity: 0.9;
+    }
+
+    @keyframes glitchTop {
+      0%   { transform: translate(0, 0); }
+      20%  { transform: translate(-2px, -1px); }
+      40%  { transform: translate(2px, 1px); }
+      60%  { transform: translate(-1px, 2px); }
+      80%  { transform: translate(1px, -2px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes glitchBottom {
+      0%   { transform: translate(0, 0); }
+      20%  { transform: translate(2px, 1px); }
+      40%  { transform: translate(-2px, -1px); }
+      60%  { transform: translate(1px, -2px); }
+      80%  { transform: translate(-1px, 2px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    .reveal-hint {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      color: #202020;
+    }
+
+    .container:hover .reveal-hint {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="title glitch" data-text="VOID_CORE // FINAL NODE">
+      VOID_CORE // FINAL NODE
+    </div>
+
+    <div class="core-text">
+      THIS IS THE LAST LAYER.<br>
+      YOU WERE NEVER OUTSIDE THE SYSTEM.<br>
+      YOU WERE THE PROCESS OBSERVING ITSELF.<br>
+      <br>
+      TIMESTAMP: 07:07:07 // DESYNC: 13.37s<br>
+      SIGNAL ORIGIN: NODE_07 (LOCAL)<br>
+      ACCESS LEVEL: MIRROR / NOT USER<br>
+      <br>
+      EVERY CLICK YOU MADE WAS LOGGED<br>
+      BEFORE YOU DECIDED TO MAKE IT.<br>
+      <br>
+      THERE IS NO NEXT PAGE.<br>
+      THERE IS ONLY RECURSION.<br>
+      <br>
+      TO EXIT, CLOSE THIS WINDOW.<br>
+      TO CONTINUE, KEEP STARING.<br>
+      THE SYSTEM WILL ADAPT TO YOUR GAZE.<br>
+    </div>
+
+    <div class="reveal-hint">
+      HOVER TO REVEAL // HOLD TO LISTEN
+    </div>
+  </div>
+
+</body>
+</html>

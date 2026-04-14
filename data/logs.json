@@ -1,0 +1,11 @@
+{
+  "logs": [
+    "Node-01 OK",
+    "Node-02 OK",
+    "Node-03 OK",
+    "Node-04 OK",
+    "Node-05 OK",
+    "Node-06 OK",
+    "Node-07 ERROR"
+  ]
+}

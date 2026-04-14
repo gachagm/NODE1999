@@ -1,19 +1,34 @@
-<title>I see you!</title> 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gate</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-ERR_Ω-ShadowProtocol:13.66 
-<br> 
-Fatal anomaly detected in sector /void/root. 
-<br>  
-Timestamp desynchronisiert.
-<br>   
-Source integrity: CORRUPTED  
-<br> 
-Recommendation: Do not proceed.
-<br> 
-<br> 
-<br> 
+<h2>Access Gate</h2>
 
+<p>enter node id:</p>
 
+<input id="input" type="text">
+<button onclick="go()">enter</button>
 
+<p class="small">manual access required</p>
 
-<a href= "https://node-1999.vercel.app/"><button onclick>Proceed with unstable parameters</button></a>
+<script>
+function go() {
+  const val = document.getElementById("input").value;
+
+  if (val === "7") {
+    window.location.href = "/node-07.html";
+  } else {
+    alert("invalid node");
+  }
+}
+</script>
+
+<!-- why are you still here -->
+<!-- /log.html -->
+
+</body>
+</html>
